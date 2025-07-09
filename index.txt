@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NERIST Payment Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 420px;
+    }
+    img {
+      max-width: 120px;
+      margin-bottom: 15px;
+    }
+    select, button {
+      margin: 15px 0;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+    }
+    .info {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<script>
+  if (localStorage.getItem("nerist_login") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+  <div class="container">
+    <img src="nerist-logo.jpg" alt="NERIST Logo">
+    <h2>NERIST Payment Portal</h2>
+    <div class="info">
+      <p><strong>Name:</strong> Bedanta Saikia</p>
+      <p><strong>Roll No:</strong> B/24/CE/039</p>
+      <p><strong>Father’s Name:</strong> Lakheswar Saikia</p>
+      <p><strong>Registration No:</strong> 124/150</p>
+    </div>
+    <label>Choose Fee Type:</label>
+    <select>
+      <option>Hostel Fee - ₹7300</option>
+      <option>College Fee - ₹13650</option>
+    </select>
+    <button onclick="payNow()">Pay Now (Scanner)</button>
+  </div>
+
+  <script>
+    function payNow() {
+      window.location.href = 'scanner-error.html';
+    }
+  </script>
+</body>
+</html>

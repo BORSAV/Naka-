@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NERIST Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 360px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 25px;
+      color: #b30000;
+    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background-color: #b30000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #990000;
+    }
+    .forgot {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>NERIST Login Portal</h2>
+    <input type="text" id="userid" placeholder="Registration No. or Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkLogin()">Login</button>
+    <div class="forgot">Forgot password?</div>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById('userid').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      if ((user === '124150' || user === 'bedanta@example.com') && pass === 'Bedanta@0') {
+        localStorage.setItem("nerist_login", "true");
+        window.location.href = 'index.html';
+      } else {
+        alert('❌ Invalid registration number or password');
+      }
+    }
+  </script>
+</body>
+</html>
